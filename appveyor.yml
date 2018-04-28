@@ -18,8 +18,8 @@ install:
   - curl -sSf -o rustup-init.exe https://win.rustup.rs
   - rustup-init.exe --default-host %TARGET% --default-toolchain %CHANNEL% -y
   - set PATH=%PATH%;C:\Users\appveyor\.cargo\bin;C:Users\appveyor\.rustup\toolchains\%CHANNEL%-%TARGET%\lib\rustlib\%TARGET%\bin
-  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-  - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\vcvars32.bat"
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\vcvars64.bat"
   - rustc -vV
   - cargo -vV
   - choco install -y doxygen.portable
