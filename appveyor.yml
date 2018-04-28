@@ -1,21 +1,23 @@
+image: 
+  - visual studio 2015
+  - visual studio 2017
 environment:
   PROJECT_NAME: pmdk-rs
   PMDK_VERSION: 1.4
   matrix:
     - TARGET: x86_64-pc-windows-msvc
       CHANNEL: nightly
-    - TARGET: i686-pc-windows-msvc
-      CHANNEL: nightly
-    - TARGET: x86_64-pc-windows-gnu
-      CHANNEL: nightly
-    - TARGET: i686-pc-windows-gnu
-      CHANNEL: nightly
+    #- TARGET: i686-pc-windows-msvc
+     # CHANNEL: nightly
+    #- TARGET: x86_64-pc-windows-gnu
+     # CHANNEL: nightly
+    #- TARGET: i686-pc-windows-gnu
+     # CHANNEL: nightly
 
 install:
   - curl -sSf -o rustup-init.exe https://win.rustup.rs
   - rustup-init.exe --default-host %TARGET% --default-toolchain %CHANNEL% -y
   - set PATH=%PATH%;C:\Users\appveyor\.cargo\bin
-  - rustup install stable-%TARGET%
   - rustc -vV
   - cargo -vV
   - choco install -y doxygen.portable
