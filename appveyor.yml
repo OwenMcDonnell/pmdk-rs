@@ -1,5 +1,4 @@
-image: 
-  - visual studio 2013
+
 
 environment:
   PROJECT_NAME: pmdk-rs
@@ -18,6 +17,7 @@ install:
   - curl -sSf -o rustup-init.exe https://win.rustup.rs
   - rustup-init.exe --default-host %TARGET% --default-toolchain %CHANNEL% -y
   - set PATH=%PATH%;C:\Users\appveyor\.cargo\bin
+  - rustup target add %TARGET%
   - rustc -vV
   - cargo -vV
   - choco install -y doxygen.portable
