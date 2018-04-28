@@ -21,6 +21,7 @@ install:
   - appveyor DownloadFile https://github.com/pmem/pmdk/releases/download/%PMDK_VERSION%/pmdk-%PMDK_VERSION%-win-x64-Setup.msi
   - msiexec /i pmdk-%PMDK_VERSION%-win-x64-Setup.msi ACCEPT=YES /qr+
   - ps: ci\set-pmdk-environment.ps1
+  - ps: gci env:
 
 build: false
 
