@@ -1,6 +1,6 @@
 image: 
-  - visual studio 2015
-  - visual studio 2017
+  - visual studio 2013
+
 environment:
   PROJECT_NAME: pmdk-rs
   PMDK_VERSION: 1.4
