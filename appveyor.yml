@@ -18,8 +18,8 @@ install:
   - curl -sSf -o rustup-init.exe https://static.rust-lang.org/rustup/dist/%TARGET%/rustup-init.exe
   - rustup-init.exe -y
   #--default-host %TARGET% --default-toolchain %CHANNEL% -y
-  - rustup toolchain install %CHANNEL%-%TARGET%
   - set PATH=%PATH%;C:\Users\appveyor\.cargo\bin
+  - rustup toolchain install %CHANNEL%-%TARGET%
   #;C:Users\appveyor\.rustup\toolchains\%CHANNEL%-%TARGET%\lib\rustlib\%TARGET%\bin
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
