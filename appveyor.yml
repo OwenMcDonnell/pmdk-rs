@@ -15,8 +15,9 @@ environment:
 
 install:
   
-  - curl -sSf -o rustup-init.exe https://win.rustup.rs
-  - rustup-init.exe --default-host %TARGET% --default-toolchain %CHANNEL% -y
+  - curl -sSf -o rustup-init.exe https://static.rust-lang.org/rustup/dist/%TARGET%/rustup-init.exe
+  - rustup-init.exe
+  #--default-host %TARGET% --default-toolchain %CHANNEL% -y
   - rustup toolchain install %CHANNEL%-%TARGET%
   - set PATH=%PATH%;C:\Users\appveyor\.cargo\bin
   #;C:Users\appveyor\.rustup\toolchains\%CHANNEL%-%TARGET%\lib\rustlib\%TARGET%\bin
