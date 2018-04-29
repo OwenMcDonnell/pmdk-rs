@@ -5,9 +5,9 @@ environment:
   PMDK_VERSION: 1.4
   matrix:
     - TARGET: x86_64-pc-windows-msvc
-      CHANNEL: stable
+      CHANNEL: nightly
     - TARGET: i686-pc-windows-msvc
-      CHANNEL: stable
+      CHANNEL: nightly
     - TARGET: x86_64-pc-windows-gnu
       CHANNEL: nightly
     - TARGET: i686-pc-windows-gnu
