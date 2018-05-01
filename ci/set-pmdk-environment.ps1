@@ -1,11 +1,11 @@
-$library_path = [Environment]::GetEnvironmentVariable("PMDK_LibraryPath","User")
+$library_path = [Environment]::GetEnvironmentVariable("PMDK_LibraryPath",[System.EnvironmentVariableTarget]::Process)
 Write-host $library_path
-$include_path = [Environment]::GetEnvironmentVariable("PMDK_IncludePath","User")
+$include_path = [Environment]::GetEnvironmentVariable("PMDK_IncludePath",[System.EnvironmentVariableTarget]::Process)
 Write-host $include_path
 if ($env:target.Contains("msvc")) {
      Write-host "in msvc"
-     [Environment]::SetEnvironmentVariable("LIB", "$library_path", "User")
-     [Environment]::SetEnvironmentVariable("INCLUDE", "$include_path", "User")
+     [Environment]::SetEnvironmentVariable("LIB", "$library_path", [System.EnvironmentVariableTarget]::Process)
+     [Environment]::SetEnvironmentVariable("INCLUDE", "$include_path", [System.EnvironmentVariableTarget]::Process)
 }
 if ($env:target.Contains("gnu")) {
      Write-host "in gnu"
