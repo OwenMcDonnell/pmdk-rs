@@ -4,9 +4,10 @@ $include_path = [Environment]::GetEnvironmentVariable("PMDK_IncludePath","User")
 Write-host $include_path
 if ($env:target.Contains("msvc")) {
      Write-host "in msvc"
-     ls env:
+     
      [Environment]::SetEnvironmentVariable("LIB", "$library_path", [System.EnvironmentVariableTarget]::Process)
      [Environment]::SetEnvironmentVariable("INCLUDE", "$include_path", [System.EnvironmentVariableTarget]::Process)
+     ls env:
 }
 if ($env:target.Contains("gnu")) {
      Write-host "in gnu"
